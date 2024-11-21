@@ -44,8 +44,12 @@ A simple application where users can add, edit, delete, and mark tasks as comple
    ```
 
 4. On GitHub, go to repository Settings > Pages:
-   - Set source to "gh-pages" branch
-   - Save changes
+   - Under "Build and deployment"
+   - Source: Deploy from a branch
+   - Branch: gh-pages / root
+   - Click Save
+   - Wait a few minutes for deployment to complete
+   - You can check the deployment status in the "Actions" tab
 
 ## Why
 This project covers the basics of CRUD operations, user interface design, and managing state.

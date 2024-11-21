@@ -3,7 +3,7 @@
 ## Description
 A simple application where users can add, edit, delete, and mark tasks as complete.
 
-## Suggested Tech Stack
+## Tech Stack
 
 ### Frontend
 - Framework: React.js

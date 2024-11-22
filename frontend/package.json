@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://kf5131.github.io/TodoListApp",
+  "homepage": "https://kf5131.github.io/ToDoListApp",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

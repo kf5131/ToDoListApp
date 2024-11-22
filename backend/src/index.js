@@ -18,6 +18,16 @@ app.use(express.json());
 // Database path
 const DB_PATH = path.join(__dirname, 'data', 'todos.json');
 
+// Ensure database file exists
+async function initializeDatabase() {
+  try {
+    await fs.access(DB_PATH);
+  } catch {
+    await fs.mkdir(path.dirname(DB_PATH), { recursive: true });
+    await fs.writeFile(DB_PATH, JSON.stringify({ todos: [] }, null, 2));
+  }
+}
+
 // Read todos
 app.get('/api/todos', async (req, res) => {
   console.log('GET /api/todos - Fetching all todos');
@@ -106,7 +116,8 @@ app.get('/api/', (req, res) => {
   res.status(200).json({ message: 'API is running' });
 });
 
-// Start server
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+// Initialize database before starting server
+app.listen(PORT, async () => {
+  await initializeDatabase();
+  console.log(`Server running in ${NODE_ENV} mode on port ${PORT}`);
 });
